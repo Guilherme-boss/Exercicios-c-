@@ -1,0 +1,62 @@
+DESAFIO  — Lista de produtos em promoção
+🎯 Objetivo:
+
+Você vai criar um programa que:
+
+Pergunta quantos produtos serão cadastrados
+
+Para cada produto, peça:
+
+Nome do produto
+
+Preço original
+
+O programa aplica um desconto de 20% a todos os produtos com preço maior que R$ 100
+
+No final, ele mostra o nome do produto, o preço original e o preço com desconto (se houver)
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Quantos produtos deseja cadastrar?");
+        int quantidade = Convert.ToInt32(Console.ReadLine());
+        string[] produto = new string[quantidade];
+        double[] precos = new double[quantidade];
+        
+        for (int i = 0; i < produto.Length; i++)
+        {
+            Console.WriteLine($"Digite o nome do produto {i + 1} ");
+            produto[i] = Console.ReadLine();
+        }
+        for (int i = 0;i < precos.Length;i++)
+        {
+            Console.WriteLine($"Digite o preco original do {produto[i]}");
+            precos[i] = Convert.ToInt32(Console.ReadLine());
+            
+        }
+        Console.WriteLine("Resultado");
+
+        for (int i = 0; i < quantidade; i++)
+        {
+            Console.WriteLine($"Preço original {precos[i]} do {produto[i]}");
+            if (precos[i] > 100)
+            {
+                double comDesconto = Math.Round(precos[i] * 0.8, 2);
+                comDesconto = Convert.ToDouble(comDesconto);
+                Console.WriteLine($"Preço com desconto: {comDesconto} do {produto[i]}");
+            }
+            else
+            {
+                Console.WriteLine($"Sem desconto para {produto[i]}");
+            }
+        }
+
+    }
+}
+
+
+
+
