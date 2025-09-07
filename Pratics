@@ -58,5 +58,101 @@ class Program
 }
 
 
+Desafio da Etapa 3 — “Calculadora de viagem”
+🎯 Objetivo:
 
+Criar um programa que:
+
+Pergunte a distância da viagem em km 
+
+Pergunte o consumo do carro em km/litro 
+
+Pergunte o preço do litro da gasolina 
+
+Calcule o total de litros necessários
+
+Calcule o custo total da viagem
+
+Mostre tudo formatado com Console.WriteLine
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Qual a distancia do seu destino?");
+        double distancia = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Qual é o consumo do carro em km/litro");
+        double consumo = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Qual o preço do litro da gasolina?");
+        double c = Convert.ToDouble(Console.ReadLine());
+
+        double litros = distancia / consumo;
+        double resultado = litros * c;
+
+        Console.WriteLine("Resultado: ");
+        Console.WriteLine($"Voce vai gastar um total de :{Math.Round(litros,2)} litros de gasolina.");
+        Console.WriteLine($"Valor total será R$: {Math.Round(resultado,2)}");
+
+    }
+}
+
+Verificador de entrada em balada 🕺🍻”
+🎯 Objetivo:
+
+Você vai criar um programa que:
+
+Pergunta a idade da pessoa
+
+Pergunta se ela está com documento (true/false)
+
+Mostra:
+
+Se tem mais de 18 e tem documento → "Entrada permitida"
+
+Se não tiver idade suficiente ou não tiver documento → "Entrada negada"
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Qual sua idade");
+        int idade = int.Parse(Console.ReadLine());
+        Console.WriteLine("TEM documento? (true/false)");
+        bool temDocumento = bool.Parse(Console.ReadLine());
+        if(idade >= 18 && temDocumento)
+        {
+            Console.WriteLine("Pode entrar");
+        }
+        else
+        {
+            Console.WriteLine("Não pode entrar");
+        }
+
+    }
+}
+
+
+Desafio do for — “Tabuada da multiplicação”
+🎯 Objetivo:
+
+Peça um número ao usuário e imprima a tabuada dele de 1 a 10.
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Digite um numero para ver a tabuada");
+        int numero = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine(numero + " x " + i + " = " + (numero * i));
+        }
+
+    }
+}
 
