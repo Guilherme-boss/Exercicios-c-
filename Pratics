@@ -217,4 +217,43 @@ class Program
     }
 }
 
+Crie um programa que simule uma lista de compras:
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to sytem.");
+        Console.WriteLine("This is a simple C# program.");
+
+        Console.WriteLine("quantos itens quer adicionar?");
+        int quantity = int.Parse(Console.ReadLine());
+
+        string[] names = new string[quantity];
+
+        for (int i = 0; i < quantity; i++)
+        {
+            Console.WriteLine($"Qual nome do item {i + 1}? ");
+            names[i] = Console.ReadLine();
+        }
+        Console.WriteLine("Os itens adicionados foram: ");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+        List<double> price = new List<double>();
+        double soma = 0;
+        foreach (string name in names)
+        {
+            Console.WriteLine($"Qual o preço do item {name}?");
+            double itemPrice = double.Parse(Console.ReadLine());
+            price.Add(itemPrice);
+            soma += itemPrice;
+        }
+        Console.WriteLine($"O valor total é de: {soma}");
+    }
+}
+
+
 
