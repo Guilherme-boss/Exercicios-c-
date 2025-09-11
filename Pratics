@@ -156,3 +156,65 @@ class Program
     }
 }
 
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int tentative = 1;
+        string nome = "admin";
+
+        Console.WriteLine("Bem vindo...");
+        Console.WriteLine("Digite seu user:");
+        string user = Console.ReadLine();
+
+        Console.WriteLine("Para condinuar digite sua senha:");
+        string digitada = Console.ReadLine();
+
+        if (digitada == "1234" && user == nome)
+        {
+            Console.WriteLine($"Bem vido: {nome} seu Acesso esta autorizado");
+            Console.WriteLine("Escolha uma opção: 1- entrar na area de relatorios, 2 Entra na area de cadastro " +
+                "OU 3- PARA SAIR DO SISTEMA");
+            int opcao = int.Parse(Console.ReadLine());
+            switch (opcao)
+            {
+                case 1:
+                    Console.WriteLine("Voce entrou na area de relatorios");
+                    break;
+                case 2:
+                    Console.WriteLine("Voce entrou na area de cadastro");
+                    Console.WriteLine("Usuarios cadastrados:");
+                    Console.WriteLine("1- Admin");
+                    Console.WriteLine("2- User");
+                    Console.WriteLine("3- Visitante");
+                    break;
+                case 3:
+                    Console.WriteLine("Voce saiu do sistema");
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Senha incorreta, tente novamnete:");
+            do
+            {
+                Console.WriteLine("Digite sua senha novamente:");
+                digitada = Console.ReadLine();
+                tentative++;
+            }
+            while (tentative <= 2);
+            {
+
+                Console.WriteLine($"Voce errou {tentative} vezes e o Acesso foi negado");
+                tentative++;
+            }
+        }
+    }
+}
+
+
