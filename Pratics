@@ -255,5 +255,46 @@ class Program
     }
 }
 
+📌 Exercício 1
 
+Crie um programa que:
+
+Peça ao usuário para digitar 5 números inteiros.
+
+Guarde esses números em um array.
+
+Mostre todos os números digitados.
+
+Calcule e mostre a soma de todos os números.
+
+using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numerosDigitados = new int[5]; 
+        int soma = 0;
+
+        Console.WriteLine("Digite 5 números:");
+
+        for (int i = 0; i < numerosDigitados.Length; i++)
+        {
+            Console.Write("Número " + (i + 1) + ": ");
+            numerosDigitados[i] = int.Parse(Console.ReadLine());
+            soma += numerosDigitados[i]; 
+        }
+
+        Console.WriteLine("\nNúmeros digitados:");
+        foreach (int numero in numerosDigitados)
+        {
+            Console.WriteLine(numero);
+        }
+
+        Console.WriteLine("A soma total é: " + soma);
+
+    }
+}
 
